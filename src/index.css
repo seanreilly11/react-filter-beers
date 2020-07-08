@@ -1,5 +1,344 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.container {
+    max-width: 960px;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.content-wrapper {
+    background-color: #f5f5f5;
+}
+
+.sidebar {
+    padding: 1rem;
+    flex: 1;
+}
+
+.sidebar .form-check {
+    margin-left: 0.5rem;
+}
+
+.filter-group {
+    margin-bottom: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    padding: 0 5%;
+    flex-basis: 100%;
+}
+
+.card-head {
+    width: 80%;
+    margin: auto;
+}
+
+.heading {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.beer-heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.beer-price {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.lead {
+    font-size: 1rem;
+}
+
+.beer-image {
+    width: 100%;
+}
+
+.img-container {
+    height: 400px;
+    overflow-y: hidden;
+}
+
+.view-more {
+    text-align: center;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+.view-more:active {
+    transform: scale(0.9);
+}
+
+/*full screen filter menu*/
+.filter-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    padding: 2rem;
+    display: none;
+}
+
+.filter-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-menu-body .form-group .form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.filter-menu-body .form-group .form-check-label {
+    font-size: 1.2rem;
+    margin-left: 0.4rem;
+}
+
+.filter-menu-filter {
+    font-size: 1.6rem;
+}
+
+.filter-menu-heading {
+    position: relative;
+    font-size: 2.2rem;
+}
+
+.filter-menu-heading::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #000;
+}
+
+.close-menu {
+    font-size: 3rem;
+}
+
+/*modal pop up*/
+.myModal-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(204, 204, 204, 0.7);
+    display: none;
+}
+
+.myModal-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    padding: 2.5rem;
+    overflow: hidden;
+}
+
+.myModal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myModal-heading {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.myModal-subheading {
+    font-size: 1.2rem;
+}
+
+.myModal-subsubheading {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.close {
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+.myModal-body {
+    display: flex;
+    width: 100%;
+}
+
+.myModal-body-left {
+    flex-basis: 60%;
+    padding-right: 1rem;
+    overflow-y: scroll;
+}
+.myModal-body-right {
+    flex-basis: 40%;
+}
+
+.myModal-body-right img {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+/*
+ * Custom translucent site header
+ */
+
+.site-header {
+    background-color: rgba(0, 0, 0, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+    color: #999;
+    transition: ease-in-out color 0.15s;
+}
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*
+ * Dummy devices (replace them with your own or something else entirely!)
+ */
+
+.product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #333;
+    border-radius: 21px;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #e5e5e5;
+}
+
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*media queries*/
+@media (min-width: 768px) {
+    .flex-md-equal > * {
+        -ms-flex: 1;
+        flex: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .background-text {
+        font-size: 250px;
+        font-weight: 600;
+    }
+    #goToBeers {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    html {
+        font-size: 120%;
+    }
+    .display-on-desk {
+        display: block;
+    }
+    .background-text {
+        font-size: 300px;
+        font-weight: 600;
+    }
+    #goToBeers {
+        bottom: 20%;
+    }
+    #filter-menu {
+        display: none;
+    }
+    #printOutput {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1.5rem;
+    }
+    #goToBeers {
+        bottom: 7.5%;
+    }
 }

@@ -42,69 +42,84 @@ export const Sidebar = () => {
 
     console.log(filter);
     return (
-        <div>
-            <Form.Check
-                type="checkbox"
-                name="style"
-                label="Option"
-                value="Option"
-                checked={filter.style ? filter.style.includes("Option") : false}
-                onChange={onCheckboxChecked}
-            />
+        <div className="sidebar">
+            <h6 className="product-count">
+                <span>10</span> Products
+            </h6>
+            <div className="filter-group">
+                <h4>Style</h4>
+                <Form.Check
+                    type="checkbox"
+                    name="style"
+                    label="Option"
+                    value="Option"
+                    checked={
+                        filter.style ? filter.style.includes("Option") : false
+                    }
+                    onChange={onCheckboxChecked}
+                />
 
-            <Form.Check
-                type="checkbox"
-                name="style"
-                label="Options"
-                value="Options"
-                checked={
-                    filter.style ? filter.style.includes("Options") : false
-                }
-                onChange={onCheckboxChecked}
-            />
+                <Form.Check
+                    type="checkbox"
+                    name="style"
+                    label="Options"
+                    value="Options"
+                    checked={
+                        filter.style ? filter.style.includes("Options") : false
+                    }
+                    onChange={onCheckboxChecked}
+                />
 
-            <Form.Check
-                type="checkbox"
-                name="style"
-                label="Optionss"
-                value="Optionss"
-                checked={
-                    filter.style ? filter.style.includes("Optionss") : false
-                }
-                onChange={onCheckboxChecked}
-            />
-            <Form.Check
-                type="checkbox"
-                name="volume"
-                label="Option"
-                value="Option"
-                checked={
-                    filter.volume ? filter.volume.includes("Option") : false
-                }
-                onChange={onCheckboxChecked}
-            />
+                <Form.Check
+                    type="checkbox"
+                    name="style"
+                    label="Optionss"
+                    value="Optionss"
+                    checked={
+                        filter.style ? filter.style.includes("Optionss") : false
+                    }
+                    onChange={onCheckboxChecked}
+                />
+            </div>
+            <div className="filter-group">
+                <h4>Volume</h4>
+                <Form.Check
+                    type="checkbox"
+                    name="volume"
+                    label="Option"
+                    value="Option"
+                    checked={
+                        filter.volume ? filter.volume.includes("Option") : false
+                    }
+                    onChange={onCheckboxChecked}
+                />
 
-            <Form.Check
-                type="checkbox"
-                name="volume"
-                label="Options"
-                value="Options"
-                checked={
-                    filter.volume ? filter.volume.includes("Options") : false
-                }
-                onChange={onCheckboxChecked}
-            />
+                <Form.Check
+                    type="checkbox"
+                    name="volume"
+                    label="Options"
+                    value="Options"
+                    checked={
+                        filter.volume
+                            ? filter.volume.includes("Options")
+                            : false
+                    }
+                    onChange={onCheckboxChecked}
+                />
 
-            <Form.Check
-                type="checkbox"
-                name="volume"
-                label="Optionss"
-                value="Optionss"
-                checked={
-                    filter.volume ? filter.volume.includes("Optionss") : false
-                }
-                onChange={onCheckboxChecked}
-            />
+                <Form.Check
+                    type="checkbox"
+                    name="volume"
+                    label="Optionss"
+                    value="Optionss"
+                    checked={
+                        filter.volume
+                            ? filter.volume.includes("Optionss")
+                            : false
+                    }
+                    onChange={onCheckboxChecked}
+                />
+            </div>
         </div>
     );
 };
