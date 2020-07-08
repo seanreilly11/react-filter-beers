@@ -2,13 +2,13 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Header } from "./components/Header";
-import { Navbar } from "./components/Navbar";
+import { Sidebar } from "./components/Sidebar";
 
 function App() {
     return (
         <>
             <Header />
-            <Navbar />
+            <Sidebar />
         </>
     );
 }
